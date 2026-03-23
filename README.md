@@ -8,10 +8,6 @@ The pipeline processes raw e-commerce datasets, performs data cleaning and trans
 
 ---
 
-## 🏗️ Architecture
-
----
-
 ## ⚙️ Tech Stack
 
 - **Programming:** Python
@@ -26,17 +22,20 @@ The pipeline processes raw e-commerce datasets, performs data cleaning and trans
 ## 🔄 ETL Pipeline
 
 ### 1. Extract
-- Reads batch CSV files from source folder
+- Reads incoming batch CSV files from the `data/source/` folder
+- Simulates real-time data ingestion by processing files released at timed intervals
 
 ### 2. Transform
-- Handles missing values
-- Removes duplicates
-- Converts data types
-- Creates new features (e.g., total_price)
+- Handles missing values and inconsistent data
+- Removes duplicate records to maintain data quality
+- Converts data types for accurate analysis (e.g., timestamps, numeric fields)
+- Performs feature engineering (e.g., calculates `total_price`)
+- Validates data before loading
 
 ### 3. Load
-- Inserts data into MySQL tables
-- Implements primary and foreign key constraints
+- Loads transformed data into MySQL tables
+- Maintains relational integrity using primary and foreign keys
+- Prevents duplicate inserts and ensures consistent data storage
 
 ---
 
@@ -53,6 +52,8 @@ The pipeline processes raw e-commerce datasets, performs data cleaning and trans
 ## 🗄️ Database Design
 
 - **Customers (Dimension Table)**
+- **Products (Dimension Table)**
+- **Sellers (Dimension Table)**
 - **Orders (Dimension Table)**
 - **Order Items (Fact Table)**
 
@@ -75,8 +76,11 @@ Power BI dashboard includes:
 
 - Total Revenue KPI
 - Top Products
+- Average order price
+- Delivered v/s Non-delivered orders
 - Seller Performance
 - Order Trends
+- Customers by geography on a world map
 
 ### 📸 Dashboard Preview
 
@@ -101,6 +105,23 @@ pip install -r requirements.txt
 
 ### 3. Setup MySQL
 Create database: ecommerce
-Run sql/schema.sql
+
+### 4. Environment Setup
+Before running the project, update MySQL credentials in the following files:
+
+🔹 File: .env
+Replace:
+```bash
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+DB_HOST=localhost
+DB_NAME=ecommerce
+```
+With your own MySQL username and password.
+
+
+
+
+
 
 
