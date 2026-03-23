@@ -99,16 +99,33 @@ git clone https://github.com/your-username/ecommerce-etl-pipeline.git
 cd ecommerce-etl-pipeline
 ```
 
-### 2. Install dependencies
+### 2. Virtual Environment Setup
+It is recommended to use a virtual environment to manage dependencies.
+* Create a virtual environment
+  ```bash
+  python -m venv venv
+  ```
+* Activate the virtual environment
+  - Windows:
+    ```bash
+    venv\Scripts\activate
+    ```
+    
+  - Mac/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Setup MySQL
+### 4. Setup MySQL
 Create database: ecommerce
 
-### 4. Environment Setup
+### 5. Environment Setup
 Before running the project, update MySQL credentials in the following files:
 
 🔹 File: .env
