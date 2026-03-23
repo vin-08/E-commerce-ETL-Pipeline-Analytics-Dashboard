@@ -84,9 +84,9 @@ Power BI dashboard includes:
 
 ### 📸 Dashboard Preview
 
-![Dashboard Page 1](dashboard/Visualizatiions_1.png)
+![Dashboard Page 1](dashboard/Visualizations_1.png)
 
-![Dashboard Page 2](dashboard/Visualizatiions_2.png)
+![Dashboard Page 2](dashboard/Visualizations_2.png)
 
 ---
 
