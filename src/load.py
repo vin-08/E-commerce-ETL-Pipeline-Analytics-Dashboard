@@ -1,11 +1,16 @@
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
 
 def load_to_mysql(df):
 
-    username = "root"
-    password = "root%401234"
-    host = "localhost"
-    database = "ecommerce"
+    username = os.getenv("DB_USER")
+    password = os.getenv("DB_PASSWORD")
+    host = os.getenv("DB_HOST")
+    database = os.getenv("DB_NAME")
 
     engine = create_engine(
         f"mysql+pymysql://{username}:{password}@{host}/{database}"
