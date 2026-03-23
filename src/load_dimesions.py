@@ -1,7 +1,21 @@
 import pandas as pd
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
 
-engine = create_engine("mysql+pymysql://root:root%401234@localhost/ecommerce")
+# Load environment variables
+load_dotenv()
+
+# Fetch values from .env
+username = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+database = os.getenv("DB_NAME")
+
+# Create engine
+engine = create_engine(
+    f"mysql+pymysql://{username}:{password}@{host}/{database}"
+)
 
 customers = pd.read_csv(r"data/source/olist_customers_dataset.csv")
 products = pd.read_csv(r"data/source/olist_products_dataset.csv")
