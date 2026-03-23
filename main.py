@@ -6,8 +6,8 @@ from src.extract import RAW_FOLDER, get_new_files, read_file
 from src.transform import clean_order_items
 from src.load import load_to_mysql
 
-RAW_FOLDER = "/Users/vinayakkanojia/Desktop/etl project/data/raw"
-PROCESSED_FOLDER = "/Users/vinayakkanojia/Desktop/etl project/data/processed"
+RAW_FOLDER = "data/raw"
+PROCESSED_FOLDER = "data/processed"
 
 def run_pipeline():
 
