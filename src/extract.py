@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-RAW_FOLDER = "/Users/vinayakkanojia/Desktop/etl project/data/raw"
+RAW_FOLDER = "data/raw"
 
 def get_new_files():
     files = os.listdir(RAW_FOLDER)
